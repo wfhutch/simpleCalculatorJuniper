@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SimpleCalculator;
+using System.Collections.Generic;
 
 namespace SimpleCalculatorTests
 {
@@ -26,6 +27,18 @@ namespace SimpleCalculatorTests
             decimal expected_number = test.LastAnswer;
             Assert.AreEqual(expected_expression, expression);
             Assert.AreEqual(expected_number, number);
+        }
+
+        [TestMethod]
+        public void StackEnsureICanAddKeysAndValuesToTheDictionary()
+        {
+            Stack test = new Stack();
+            string user_key = "x";
+            int user_value = 27;
+            test.AddVariables(user_key, user_value);
+            List<string> expected = test.FindAllKeysAndValues();
+            Assert.AreEqual(expected, "x=27");
+
         }
     }
 }

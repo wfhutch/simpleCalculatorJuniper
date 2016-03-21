@@ -25,19 +25,17 @@ namespace SimpleCalculator
 
                 if (response == "exit" || response == "quit")
                 {
-                    Console.WriteLine("Bye!!");
+                    Console.WriteLine("Bye!! \nPress any key to close program...");
                     runProgram = false;
                     Console.ReadKey();
                 }
                 else if(response == "lastq")
                 {
-                    string last_expression = stack.LastExpression;
-                    Console.WriteLine(last_expression);
+                    Console.WriteLine("     " + stack.LastExpression);
                 }
                 else if (response == "last")
                 {
-                    decimal last_answer = stack.LastAnswer;
-                    Console.WriteLine(last_answer);
+                    Console.WriteLine("     " + stack.LastAnswer);
 
                 }
                 else
