@@ -14,6 +14,7 @@ namespace SimpleCalculator
         public int SecondNumber { get; set; }
 
         // This method formats the user input to add spaces before and after the operator.
+        // It also checks for proper user input. If user enters 9 + - 8, this method will return an error message.
         // If the use enters 6*7 this method will return 6 * 7.
         public string formatInput(string input)
         {
@@ -29,7 +30,6 @@ namespace SimpleCalculator
             } else
             {
                 newInput = (firstNumber + " " + opSign + " " + secondNumber);
-                //splitString(newInput);
             }
                 return newInput;
         }
@@ -52,9 +52,7 @@ namespace SimpleCalculator
 
             string op = substrings[1];
             Operator = op;
-            //return substrings;
             }
         }
-
     }
 }

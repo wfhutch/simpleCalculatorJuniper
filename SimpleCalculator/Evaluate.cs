@@ -9,30 +9,28 @@ namespace SimpleCalculator
 {
     public class Evaluate
     {
-        Parse userInput = new Parse();
+        //Parse userInput = new Parse();
         decimal answer = 0;
 
         public decimal calculate(int first, string op, int second)
         {
-            if (op == "+")
+            switch (op)
             {
-                answer = first + second;
-            }
-            else if (op == "-")
-            {
-                answer = first - second;
-            }
-            else if (op == "*")
-            {
-                answer = first * second;
-            }
-            else if (op == "/")
-            {
-                answer = decimal.Round(Convert.ToDecimal(first) / Convert.ToDecimal(second), 2);
-            }
-            else if (op == "%")
-            {
-                answer = first % second;
+                case "+":
+                    answer = first + second;
+                    break;
+                case "-":
+                    answer = first - second;
+                    break;
+                case "*":
+                    answer = first * second;
+                    break;
+                case "/":
+                    answer = decimal.Round(Convert.ToDecimal(first) / Convert.ToDecimal(second), 2);
+                    break;
+                case "%":
+                    answer = first % second;
+                    break;
             }
             return answer;
         }
